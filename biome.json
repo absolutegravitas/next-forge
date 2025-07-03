@@ -18,6 +18,7 @@
   },
   "files": {
     "ignore": [
+      "**/.jsonc",
       "node_modules/**",
       "dist/**",
       "build/**",
