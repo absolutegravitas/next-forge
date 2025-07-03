@@ -107,7 +107,7 @@ export const Apps = () => (
         className={cn(
           index % 2 && 'sm:border-l',
           index > 0 && 'border-t sm:border-t-0',
-          index > 1 && '!border-t'
+          index > 1 && 'border-t!'
         )}
         key={index}
       >

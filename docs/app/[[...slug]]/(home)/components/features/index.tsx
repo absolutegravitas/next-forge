@@ -189,19 +189,19 @@ export const Features = () => (
           </p>
         </div>
       </div>
-      <div className="absolute inset-0 grid grid-cols-1 pt-0 [container-type:inline-size]">
+      <div className="absolute inset-0 grid grid-cols-1 pt-0 @container">
         {rows.map((rowData, index) => (
           <div className="group relative" key={index}>
-            <div className="absolute inset-x-0 top-1/2 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-background/15 to-[2px] dark:from-foreground/15" />
-            <div className="absolute inset-x-0 bottom-0 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-background/5 to-[2px] group-last:hidden dark:from-foreground/5" />
+            <div className="absolute inset-x-0 top-1/2 h-0.5 bg-size-[12px_100%] bg-linear-to-r from-[2px] from-background/15 to-[2px] dark:from-foreground/15" />
+            <div className="absolute inset-x-0 bottom-0 h-0.5 bg-size-[12px_100%] bg-linear-to-r from-[2px] from-background/5 to-[2px] group-last:hidden dark:from-foreground/5" />
             {rowData.row.map((logo, _logoIndex) => (
               <div
                 key={logo.label}
                 className={cn(
                   logo.className,
                   'absolute top-[50px] flex items-center gap-2 whitespace-nowrap px-3 py-1',
-                  'rounded-full bg-gradient-to-t from-50% from-secondary/50 to-secondary/50 ring-1 ring-background/10 ring-inset backdrop-blur-sm dark:from-background/50 dark:to-secondary/50 dark:ring-foreground/10',
-                  '[--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-play-state:running] [animation-timing-function:linear]',
+                  'rounded-full bg-linear-to-t from-50% from-secondary/50 to-secondary/50 ring-1 ring-background/10 ring-inset backdrop-blur-sm dark:from-background/50 dark:to-secondary/50 dark:ring-foreground/10',
+                  '[--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] running [animation-timing-function:linear]',
                   'shadow-[0_0_15px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(0,0,0,0.2)]'
                 )}
               >
