@@ -1,17 +1,36 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "extends": ["ultracite"],
+  "linter": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
   "javascript": {
-    "globals": ["Liveblocks"]
+    "globals": ["React", "JSX", "NodeJS", "process", "Liveblocks"],
+    "formatter": {
+      "quoteStyle": "double"
+    }
   },
   "files": {
     "ignore": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      ".next/**",
+      "out/**",
+      "coverage/**",
+      "public/**",
+      "apps/docs/**/*.json",
+      "apps/email/.react-email/**",
       "packages/design-system/components/ui/**",
       "packages/design-system/lib/**",
       "packages/design-system/hooks/**",
-      "packages/collaboration/config.ts",
-      "apps/docs/**/*.json",
-      "apps/email/.react-email/**"
+      "packages/collaboration/config.ts"
     ]
   }
 }
