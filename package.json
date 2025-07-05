@@ -23,21 +23,21 @@
   },
   "devDependencies": {
     "@auto-it/first-time-contributor": "^11.3.0",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "^2.0.6",
     "@repo/typescript-config": "workspace:*",
-    "@turbo/gen": "^2.5.3",
-    "@types/node": "^22.15.21",
+    "@turbo/gen": "^2.5.4",
+    "@types/node": "^24.0.10",
     "tsup": "^8.5.0",
     "turbo": "^2.5.4",
     "typescript": "^5.8.3",
-    "ultracite": "^4.2.5",
-    "vitest": "^3.1.4",
+    "ultracite": "^5.0.31",
+    "vitest": "^3.2.4",
     "wrangler": "^4.23.0"
   },
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.12.4",
   "dependencies": {
     "@clack/prompts": "^0.11.0",
     "commander": "^14.0.0"
