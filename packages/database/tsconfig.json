@@ -1,7 +1,12 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["node", "@cloudflare/workers-types"],
+    "paths": {
+      "@repo/database": ["./packages/database/index.ts"],
+      "@repo/database/*": ["./packages/database/*"]
+    }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

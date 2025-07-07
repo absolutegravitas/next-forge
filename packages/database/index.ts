@@ -1,22 +1,25 @@
-import 'server-only';
+// packages/database/index.ts
+import "server-only";
+import { drizzle } from "drizzle-orm/d1";
+import { tables } from "./schema";
+import type { D1Database } from "@cloudflare/workers-types";
 
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import { PrismaNeon } from '@prisma/adapter-neon';
-import ws from 'ws';
-import { PrismaClient } from './generated/client';
-import { keys } from './keys';
-
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
-
-neonConfig.webSocketConstructor = ws;
-
-const pool = new Pool({ connectionString: keys().DATABASE_URL });
-const adapter = new PrismaNeon(pool);
-
-export const database = globalForPrisma.prisma || new PrismaClient({ adapter });
-
-if (process.env.NODE_ENV !== 'production') {
-  globalForPrisma.prisma = database;
+// This global variable is used by Wrangler to inject the D1 database
+// when running in Workers or wrangler dev.
+// It is not available in other environments, such as Node.js.
+declare global {
+  var __D1_BETA__DB: D1Database;
 }
 
-export * from './generated/client';
+function getD1Database(): D1Database {
+  if (process.env.DB) return process.env.DB as unknown as D1Database;
+  if (globalThis.__D1_BETA__DB) return globalThis.__D1_BETA__DB;
+  throw new Error("D1 DB not available—run under Workers or wrangler dev.");
+}
+
+export function getDatabase() {
+  return drizzle(getD1Database(), {
+    schema: tables,
+    logger: true, // optional
+  });
+}

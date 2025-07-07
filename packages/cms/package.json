@@ -3,23 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "basehub dev",
-    "build": "basehub build",
-    "analyze": "basehub",
+    "dev": "content-collections build",
+    "build": "content-collections build",
+    "analyze": "content-collections build",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
+    "@content-collections/mdx": "^0.2.2",
     "@t3-oss/env-nextjs": "^0.13.8",
-    "basehub": "^9.0.19",
+    "fumadocs-core": "^15.6.1",
     "react": "^19.1.0",
     "zod": "^3.25.71"
   },
   "devDependencies": {
+    "@content-collections/cli": "^0.1.6",
+    "@content-collections/core": "^0.9.1",
+    "@content-collections/next": "^0.2.6",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "next": "^15.3.4"
+    "next": "^15.3.4",
+    "reading-time": "^1.5.0"
   }
 }

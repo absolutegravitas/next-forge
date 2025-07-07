@@ -29,3 +29,28 @@ Then read the [docs](https://www.next-forge.com/docs) for more information.
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
+
+For sub-apps
+/app/app
+/app/api
+/app/web
+
+You can add the following scripts to your package.json:
+
+"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+"cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+
+Usage
+preview: Builds your app and serves it locally, allowing you to quickly preview your app running locally in the Workers runtime, via a single command. - deploy: Builds your app, and then deploys it to Cloudflare - cf-typegen: Generates a cloudflare-env.d.ts file at the root of your project containing the types for the env.
+
+Summary of Recommended Steps (In Order)
+
+Infrastructure Setup - Configure Cloudflare environment and tooling
+Database Migration - Replace Prisma with Drizzle + D1
+Authentication Migration - Replace Clerk with Better Auth
+Documentation Migration - Replace Mintlify with Fumadocs
+Remove Storybook - Clean up Storybook dependencies and configurations
+Deployment Configuration - Set up Cloudflare Workers deployment
+Environment Variables - Update all environment configurations
+Testing & Optimization - Verify everything works and optimize for Cloudflare
