@@ -8,9 +8,13 @@ export function middleware(request: NextRequest) {
   // Allow the request to go through to the page
   const response = NextResponse.next();
 
-  // Delete the 'Vary' header from the response
+  // Delete the 'Vary' header to allow CDN caching
   response.headers.delete("Vary");
 
-  // Return the modified response
   return response;
 }
+
+// Add this config object to apply the middleware to all pages
+export const config = {
+  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+};
