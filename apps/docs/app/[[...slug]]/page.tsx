@@ -13,6 +13,9 @@ import { source } from "../../lib/source";
 import { baseOptions } from "../layout.config";
 import Home from "./(home)";
 
+import { HomeLayout } from "fumadocs-ui/layouts/home";
+import type { ReactNode } from "react";
+
 type PageProps = {
   params: Promise<{ slug?: string[] }>;
 };
@@ -41,58 +44,59 @@ const Page = async (props: PageProps) => {
   const MDX = page.data.body;
 
   return (
-    <DocsLayout
-      {...baseOptions}
-      tree={source.pageTree}
-      sidebar={{
-        collapsible: false,
-        tabs: [
-          {
-            title: "Docs",
-            url: "/docs",
-          },
-          {
-            title: "Apps",
-            url: "/apps",
-          },
-          {
-            title: "Packages",
-            url: "/packages",
-          },
+    <>
+      <DocsLayout
+        tree={source.pageTree}
+        sidebar={{
+          collapsible: false,
+          tabs: [
+            {
+              title: "Docs",
+              url: "/docs",
+            },
+            {
+              title: "Apps",
+              url: "/apps",
+            },
+            {
+              title: "Packages",
+              url: "/packages",
+            },
 
-          {
-            title: "Migrations",
-            url: "/migrations",
-          },
-          {
-            title: "Addons",
-            url: "/addons",
-          },
-        ],
-      }}
-      tabMode='navbar'
-      nav={{
-        ...baseOptions.nav,
-        mode: "top",
-      }}
-    >
-      <DocsPage
-        toc={page.data.toc}
-        full={page.data.full}
-        tableOfContent={{ style: "clerk" }}
+            {
+              title: "Migrations",
+              url: "/migrations",
+            },
+            {
+              title: "Addons",
+              url: "/addons",
+            },
+          ],
+        }}
+        tabMode='navbar'
+        nav={{
+          ...baseOptions.nav,
+          mode: "top",
+        }}
       >
-        <DocsTitle>{page.data.title}</DocsTitle>
-        <DocsDescription>{page.data.description}</DocsDescription>
-        <DocsBody>
-          <MDX
-            components={getMDXComponents({
-              // this allows you to link to other pages with relative file paths
-              a: createRelativeLink(source, page),
-            })}
-          />
-        </DocsBody>
-      </DocsPage>
-    </DocsLayout>
+        <DocsPage
+          toc={page.data.toc}
+          full={page.data.full}
+          tableOfContent={{ style: "clerk" }}
+        >
+          <DocsTitle>{page.data.title}</DocsTitle>
+          <DocsDescription>{page.data.description}</DocsDescription>
+          <DocsBody>
+            <MDX
+              components={getMDXComponents({
+                // this allows you to link to other pages with relative file paths
+                a: createRelativeLink(source, page),
+              })}
+            />
+          </DocsBody>
+        </DocsPage>
+      </DocsLayout>
+    </>
   );
 };
 

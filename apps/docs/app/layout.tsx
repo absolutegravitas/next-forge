@@ -1,3 +1,5 @@
+// export const dynamic = "force-static";
+
 import "./global.css";
 import { cn } from "@/lib/utils";
 import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
