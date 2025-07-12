@@ -72,6 +72,7 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250712.0",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24.0.13",
