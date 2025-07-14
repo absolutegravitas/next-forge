@@ -8,7 +8,8 @@ const config = {
   // Optimize for static generation where possible
   experimental: {
     // Enable static optimization for better caching
-    optimizeCss: true,
+    // causes critter error
+    // optimizeCss: true,
     // Reduce bundle size
     optimizePackageImports: ["lucide-react"],
   },
