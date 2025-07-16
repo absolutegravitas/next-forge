@@ -24,10 +24,6 @@ const config = {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "vercel.com",
-      },
-      {
         hostname: "avatars.githubusercontent.com",
         protocol: "https",
       },
