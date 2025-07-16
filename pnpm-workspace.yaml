@@ -1,11 +1,14 @@
 packages:
   - apps/*
   - packages/*
+
 onlyBuiltDependencies:
-  - '@clerk/shared'
-  - '@prisma/client'
-  - '@prisma/engines'
+  - '@sentry/cli'
   - '@tailwindcss/oxide'
+  - bufferutil
   - core-js
+  - core-js-pure
   - esbuild
-  - prisma
+  - msgpackr-extract
+  - sharp
+  - workerd
