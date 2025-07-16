@@ -8,15 +8,15 @@
   },
   "dependencies": {
     "@knocklabs/node": "^1.10.3",
-    "@knocklabs/react": "^0.7.18",
+    "@knocklabs/react": "^0.7.19",
     "@t3-oss/env-nextjs": "^0.13.8",
     "react": "^19.1.0",
-    "zod": "^3.25.71"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "typescript": "^5.8.3",
-    "@types/node": "24.0.10",
+    "@types/node": "24.0.12",
     "@types/react": "19.1.8",
     "@types/react-dom": "^19.1.6"
   }

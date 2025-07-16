@@ -18,12 +18,12 @@
     "server-only": "^0.0.1",
     "undici": "^7.11.0",
     "ws": "^8.18.3",
-    "zod": "^3.25.71"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20250705.0",
+    "@cloudflare/workers-types": "^4.20250709.0",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^24.0.10",
+    "@types/node": "^24.0.12",
     "@types/ws": "^8.18.1",
     "bufferutil": "^4.0.9",
     "drizzle-kit": "^0.31.4",

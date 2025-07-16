@@ -8,11 +8,6 @@
     "dist/index.js"
   ],
   "scripts": {
-    "db:generate": "cd packages/database && pnpm db:generate",
-    "db:migrate": "cd packages/database && pnpm db:migrate",
-    "db:studio": "cd packages/database && pnpm db:studio",
-    "db:push": "cd packages/database && pnpm db:push",
-    "db:pull": "cd packages/database && pnpm db:pull",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "ultracite lint",
