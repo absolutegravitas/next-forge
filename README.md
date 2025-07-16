@@ -30,6 +30,9 @@ Then read the [docs](https://www.next-forge.com/docs) for more information.
 
 Made with [contrib.rocks](https://contrib.rocks).
 
+Start Qdrant Docker Server to run embeddings db for RooCode
+docker run -p 6333:6333 qdrant/qdrant
+
 For sub-apps
 /app/app
 /app/api
