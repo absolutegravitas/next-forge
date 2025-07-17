@@ -24,5 +24,16 @@
     "@types/react-dom": "^19.1.6",
     "@cloudflare/workers-types": "^4.20250709.0",
     "typescript": "^5.8.3"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./server": "./server.ts",
+    "./client": "./client.ts",
+    "./middleware": "./middleware.ts",
+    "./handlers": "./handlers.ts",
+    "./components/auth-provider": "./components/auth-provider.tsx",
+    "./utils/file-upload": "./utils/file-upload.ts",
+    "./utils/geolocation": "./utils/geolocation.ts",
+    "./utils/session": "./utils/session.ts"
   }
 }
